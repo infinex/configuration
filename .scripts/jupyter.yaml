@@ -1,0 +1,18 @@
+session_name: jupyter
+#before_script: bash /Users/liang/vpnclient/run.sh
+windows:
+- window_name: jupyter_remote
+  layout: main-vertical
+  shell_command_before:
+    - cd ~/
+  panes:
+    - shell_command:          
+        - ssh yongjie@10.0.0.12
+    - shell_command:          
+        - ssh yongjie@10.0.0.12
+        - jupyter lab --no-browser 
+    - shell_command:          
+        - sleep 10
+        - ps aux | grep -ie "ssh -N -f -L localhost:8889:localhost:8889"  | grep -v grep | head -1 | awk '{print $2}' | xargs kill -9
+        - open "https://localhost:8889/"
+        - ssh -N -L localhost:8889:localhost:8889 yongjie@10.0.0.12

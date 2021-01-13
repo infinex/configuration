@@ -1,0 +1,3 @@
+#!/bin/sh
+#export ipaddress=(sudo nmap -sn 192.168.1.0/24 | grep -B 2 Tp-link | head -n 1 | grep -oP '\(\K[^\)]+')
+/opt/miniconda3/bin/pyhs100 --ip 192.168.1.79 emeter | grep state | grep -P -o "'power'\S.\d*" | sed -E "s/://g;s/'//g;s/power/POW/g" | awk '{print $1,$2"W"}'

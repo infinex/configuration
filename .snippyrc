@@ -1,0 +1,19 @@
+[ca] conda activate %%
+[cd] conda deactivate
+[cl] conda list
+[pdb] import pdb;pdb.set_trace()
+[jl] jupyter lab
+[cef-conda export file] conda env export > environment.yml
+[cer- conda export requirement] conda list -e > requirements.txt
+[cue-conda env create new environment] conda create -n %% python=3.6
+[cue-conda env update existing environment] conda env update -f %%.yml
+[wsc] sudo systemctl start windscribe;sleep 1;windscribe connect %%
+[wsd] windscribe disconnect 
+[pyc] pycharm ./ &
+[lef] find $1 -type f -print0 | xargs -0 stat --format '%Y :%y %n' | sort -nr | cut -d: -f2- | head
+[pand] pd.set_option('display.max_rows', 500);pd.set_option('display.max_columns', 500);pd.set_option('display.width', 1000);pd.set_option('display.max_colwidth', -1)
+[tmj] /home/liang/miniconda3/bin/tmuxp load /home/liang/project/tmux/jupyter.yaml
+[tmc] /home/liang/miniconda3/bin/tmuxp load /home/liang/project/tmux/cmrc.yaml
+[lsofk]  lsof -i :%% | tail -n +2  | awk '{print $2}' | xargs -I{} kill -9 {}
+[emb] from IPython import embed; embed()
+[md] sudo mount /dev/sdb1 /mnt

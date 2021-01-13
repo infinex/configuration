@@ -1,0 +1,11 @@
+alias o='xdg-open'
+alias ll='ls -lhF'
+alias p='pycharm-professional ./ &'
+alias s='subl'
+alias v='nvim'
+alias r='ranger'
+alias o='xdg-open'
+alias b='cd -'
+#sef(){du -a ~/.scripts ~/.config ~/.vimrc ~/.zshrc ~/.bashrc | awk '{print $2}' | fzf --height 20% | xargs zsh -c '</dev/tty $EDITOR "$@"' zero;}
+alias h='cd ~/'
+
